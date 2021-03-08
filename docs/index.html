@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>Blazor</title>
+
+        <meta name="description" content="Blazor">
+        <meta name="author" content="Dani Herrera">
+
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="dist/reset.css">
+        <link rel="stylesheet" href="dist/reveal.css">
+        <link rel="stylesheet" href="dist/theme/white.css" id="theme">
+
+        <!-- Theme used for syntax highlighting of code -->
+        <link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+    </head>
+
+    <body>
+
+        <div class="reveal">
+
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+
+                <section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$">
+                    <script type="text/template">
+                        ## Blazor
+
+                        ![UdG](./imatges/udg.png)
+
+                        Març'2021 <!-- .element style="font-size:50%;" -->
+
+                        --
+
+                        #### by
+                        - dani.herrera@udg.edu
+
+                        --
+
+                        #### Objectius
+
+                        Introducció a la programació amb Blazor
+                        
+                        ![](./imatges/Blazor.png)<!-- .element style="width:50%;" -->
+
+                        --
+
+                        #### Pla 4 dies
+
+                        * Sessió 1 - Introducció i Binding 
+                        * Sessió 2: Components i Paràmetres
+                        * Sessió 3: Forms i Layout  
+                        * Sessió 4: Modes d’execució, Autenticació 
+
+                        --
+
+                        ### Documentació
+
+                        - [Presentació Curs (Dani Herrera)](https://ctrl-alt-d.github.io/curs-blazor-UdG/)
+
+                    </script>
+                </section>
+
+
+                <section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$">
+                    <script type="text/template">
+                        ## Sessió 1 - Introducció i Binding                         
+
+                        --
+
+                        ## .Net Framework i .Net Core
+
+                        * [.NET Core and .NET 5 Support Policy](https://dotnet.microsoft.com/platform/support/policy/dotnet-core)
+                            * ~~Net Framework~~ 💀
+                            * ~~Net Core~~ 💀
+                            * .NET 👼🏻
+
+                        ![](./imgs/NETCoreandNET5officialsupportpolicy.png)
+
+                        --
+
+                        ## .NET Framework
+
+                        Quoting [.NET Framework versions and dependencies](https://docs.microsoft.com/en-us/dotnet/framework/migration-guide/versions-and-dependencies#net-framework-48)
+
+                        >.NET Framework 4.8 is the last version of .NET Framework, and no further versions will be released. However, .NET Framework will continue to be serviced with monthly security and reliability bug fixes. Additionally, it will continue to be included with Windows, with no plans to remove it. **You don't need to migrate your .NET Framework apps, but for new development, use .NET 5.0 or later**.
+
+
+                        --
+
+                        ## [Qué no incluye .NET 5](https://docs.microsoft.com/es-es/archive/msdn-magazine/2019/july/csharp-net-reunified-microsoft%E2%80%99s-plans-for-net-5#qu%C3%A9-no-incluye-net5)
+
+                        * ASP .NET Web Forms => ASP .NET Blazor
+                        * Servidor WCF y comunicación remota => gRPC
+                        * Windows Workflow (WF) = > Core WF (github.com/UiPath/corewf)
+
+                        --
+
+                        ## Hands on 1
+
+                        * Pràctica instal∙lar + hello world consola
+
+                        --
+
+                        ## Què és Blazor?
+
+                        >**[Interactive web UI with C#](https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor)**
+                        >
+                        >Blazor lets you build interactive web UIs using C# instead of JavaScript. Blazor apps are composed of reusable web UI components implemented using C#, HTML, and CSS.
+
+                        * Broser + Razor (*1) = Blazor
+                        * Basat en components
+
+                        _(*1) Razor is an ASP.NET programming syntax used to create dynamic web pages_
+
+                        
+                        --
+
+                        ## [ASP.NET Core Blazor hosting models](https://docs.microsoft.com/en-us/aspnet/core/blazor/hosting-models?view=aspnetcore-5.0)
+
+                        >Blazor is a web framework designed to run client-side in the browser on a WebAssembly-based .NET runtime (Blazor WebAssembly) or server-side in ASP.NET Core (Blazor Server). Regardless of the hosting model, the app and component models are the same.
+
+                        * [Blazor WebAssembly](https://docs.microsoft.com/en-us/aspnet/core/blazor/hosting-models?view=aspnetcore-5.0#blazor-webassembly)
+                        * [Blazor Server](https://docs.microsoft.com/en-us/aspnet/core/blazor/hosting-models?view=aspnetcore-5.0#blazor-server)
+
+                        --
+
+                        ## Hands on 2
+
+                        - La meva primera aplicació Blazor.
+                        - Directives i Binding. One way and Two way binding.
+
+                        --
+
+                        ## Hands on 3
+
+                        - Pràctica Todo-List.
+
+                    </script>
+                </section>
+
+
+                <section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$">
+                    <script type="text/template">
+                        * Sessió 2: Components i Paràmetres
+                        * Sessió 3: Forms i Layout  
+                        * Sessió 4: Modes d’execució, Autenticació
+
+                        ToDo :)
+                    </script>
+                </section>
+
+            </div>
+
+        </div>
+
+        <script src="dist/reveal.js"></script>
+        <script src="plugin/zoom/zoom.js"></script>
+        <script src="plugin/notes/notes.js"></script>
+        <script src="plugin/search/search.js"></script>
+        <script src="plugin/markdown/markdown.js"></script>
+        <script src="plugin/highlight/highlight.js"></script>
+        <script>
+
+            // Also available as an ES module, see:
+            // https://revealjs.com/initialization/
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                center: true,
+                hash: true,
+
+                // Learn about plugins: https://revealjs.com/plugins/
+                plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
+            });
+
+        </script>
+
+    </body>
+</html>
