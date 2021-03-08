@@ -1,0 +1,26 @@
+@page "/counter"
+
+<h1>Counter</h1>
+
+<p>Current count: @currentCount</p>
+
+<button class="btn @ElMeuCss" 
+        @onclick="IncrementCount"
+        @onmouseover="@( () => ElMeuCss = "btn-primary" )"
+        @onmouseout="@( () => ElMeuCss = "btn-danger" )"
+        >
+    Click me
+</button>
+
+@code {
+    private string ElMeuCss = "btn-primary";
+    private int currentCount = 0;
+
+    
+
+
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+}

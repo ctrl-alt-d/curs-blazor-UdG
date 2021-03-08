@@ -1,0 +1,12 @@
+﻿@page "/"
+
+<h1>La pàgina de @Nom</h1>
+
+<input type="text" @bind="Nom" @bind:event="oninput" >
+
+@code{
+
+    private string Nom = "Pepe";
+
+
+}

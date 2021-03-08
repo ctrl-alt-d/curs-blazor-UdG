@@ -1,0 +1,40 @@
+@page "/"
+
+
+Nova tasca: <input type="text" @bind="ItemAafegir">
+<button class="btn btn-default" @onclick="AfegirTasca">Afegir la Tasca</button>
+
+<ol>
+@foreach (var item in Items)
+{
+    <li>
+        @item  
+        <button class="btn btn-danger" @onclick="@( () => EliminaItem(item) )" >
+            Esborrar
+        </button>
+    </li>
+}
+</ol>
+
+
+@code
+{
+    private void AfegirTasca()
+    {
+        if( string.IsNullOrEmpty( ItemAafegir )) return;
+        Items.Add(ItemAafegir);
+        ItemAafegir = "";
+        System.Console.WriteLine("Passa per aquí");
+    }
+    private string ItemAafegir = "";
+    private void EliminaItem(string _item)
+    {
+        Items = Items.Where(x=>x!=_item).ToList();
+    }
+    private List<string> Items = new List<string>()
+        {
+            "Nullificar flutter",
+            "Blazor HotReload",
+            "Comprar llet"
+        };
+}
