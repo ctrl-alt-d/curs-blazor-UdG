@@ -151,6 +151,145 @@
 
                 <section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$">
                     <script type="text/template">
+                        ### Sessió 2: Components i Paràmetres
+
+                        - Part 1: IoC & DI
+                        - Part 2: Components Blazor
+
+                        --
+
+                        ### Part 1: IoC & DI
+
+                        - Intro al patró d'inversió de control (IoC)
+                        - Intro al patró d'Injecció de dependències (DI)
+                        - Hands on IoC & DI
+
+                        --
+
+                        ### [Dependency inversion principle](https://docs.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/architectural-principles#dependency-inversion)
+
+                        Concepte del Inversion of control (IoC)
+
+                        >rendering high-level modules independent of the low-level module implementation details
+
+                        --
+
+                        ### [Dependency inversion principle](https://docs.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/architectural-principles#dependency-inversion)
+
+                        Beneficis del Inversion of control (IoC)
+
+                        >The resulting applications are more testable, modular, and maintainable as a result.
+
+                        --
+
+                        ### [Patró injecció de dependències (DI)](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-5.0)
+
+                        >In software engineering, dependency injection is a technique in which an object receives other objects that it depends on.
+
+                        --
+
+                        ### Hands on IoC & DI
+
+                        Exemple d'aplicació amb DI i IoC
+
+                        --
+
+                        ### Part 2: Components Blazor
+                        - Components Blazor i cicle de vida
+                        - Hands on Components 1
+                        - Components amb paràmetres
+                        - Hands on Components 2
+
+                        --
+
+                        ### [Components Blazor](https://docs.microsoft.com/en-us/aspnet/core/blazor/components/?view=aspnetcore-5.0)
+
+                        >Blazor apps are built using components. A component is a self-contained chunk of user interface (UI), such as a page, dialog, or form.
+
+                        --
+
+                        ### [Component rendering](https://docs.microsoft.com/en-us/aspnet/core/blazor/components/rendering?view=aspnetcore-5.0)
+
+                        És la transforció del component en elements del DOM.
+
+                        --                        
+
+                        ### [Clicle de vida d'un component](https://docs.microsoft.com/en-us/aspnet/core/blazor/components/lifecycle?view=aspnetcore-5.0)
+
+                        * `OnInitialized` & `OnInitializedAsync`
+                        * `OnAfterRender(bool firstRender)` & `OnAfterRenderAsync`
+                        * `OnParametersSet` & `OnParametersSetAsync`
+
+                        --
+
+                        ### Component Hands on 1
+
+                        Crearem un components i observarem com es renderitzen als diferents punts del seu cicle de vida.
+
+                        --
+
+                        ### [Component Route Parameters (via url)](https://docs.microsoft.com/en-us/aspnet/core/blazor/components/?view=aspnetcore-5.0#route-parameters)
+
+                        ```
+                        @page "/RouteParameter/{text?}"
+
+                        <h1>Blazor is @Text!</h1>
+
+                        @code {
+                            [Parameter] 
+                            public string Text { get; set; } = "fantastic";
+                        }
+                        ```
+
+                        --
+
+                        ### [Component parameters (via atributs)](https://docs.microsoft.com/en-us/aspnet/core/blazor/components/?view=aspnetcore-5.0#component-parameters)
+
+                        ```
+                        <div class="panel-heading">@Title</div>
+
+                        @code {
+                            [Parameter]
+                            public string Title { get; set; }
+                        }
+                        ```
+
+                        --
+
+                        ### [Cascading Value](https://docs.microsoft.com/en-us/aspnet/core/blazor/components/cascading-values-and-parameters?view=aspnetcore-5.0)
+
+                        ```
+                        <CascadingValue Value="theme">
+                            <MyCustomComponent />
+                        </CascadingValue>
+
+                        @code {
+                            private ThemeInfo theme {set; get; }
+                        }                        
+                        ```
+
+                        --
+
+                        ### [Cascading Parameter](https://docs.microsoft.com/en-us/aspnet/core/blazor/components/cascading-values-and-parameters?view=aspnetcore-5.0)
+
+                        ```
+                        @code {
+                            [CascadingParameter]
+                            protected ThemeInfo ThemeInfo { get; set; }
+                        }
+                        ```
+
+                        --
+
+                        ### Component Hands on 2
+
+                        Crearem un components i li passarem paràmetres.
+
+                    </script>
+                </section>
+
+                <section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$">
+                    <script type="text/template">
                         * Sessió 2: Components i Paràmetres
                         * Sessió 3: Forms i Layout  
                         * Sessió 4: Modes d’execució, Autenticació
