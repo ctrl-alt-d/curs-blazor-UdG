@@ -71,11 +71,11 @@
 
                 <section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$">
                     <script type="text/template">
-                        ## Sessió 1 - Introducció i Binding                         
+                        ### Sessió 1 - Introducció i Binding                         
 
                         --
 
-                        ## .Net Framework i .Net Core
+                        ### .Net Framework i .Net Core
 
                         * [.NET Core and .NET 5 Support Policy](https://dotnet.microsoft.com/platform/support/policy/dotnet-core)
                             * ~~Net Framework~~ 💀
@@ -86,7 +86,7 @@
 
                         --
 
-                        ## .NET Framework
+                        ### .NET Framework
 
                         Quoting [.NET Framework versions and dependencies](https://docs.microsoft.com/en-us/dotnet/framework/migration-guide/versions-and-dependencies#net-framework-48)
 
@@ -95,7 +95,7 @@
 
                         --
 
-                        ## [Qué no incluye .NET 5](https://docs.microsoft.com/es-es/archive/msdn-magazine/2019/july/csharp-net-reunified-microsoft%E2%80%99s-plans-for-net-5#qu%C3%A9-no-incluye-net5)
+                        ### [Qué no incluye .NET 5](https://docs.microsoft.com/es-es/archive/msdn-magazine/2019/july/csharp-net-reunified-microsoft%E2%80%99s-plans-for-net-5#qu%C3%A9-no-incluye-net5)
 
                         * ASP .NET Web Forms => ASP .NET Blazor
                         * Servidor WCF y comunicación remota => gRPC
@@ -103,13 +103,13 @@
 
                         --
 
-                        ## Hands on 1
+                        ### Hands on 1
 
                         * Pràctica instal∙lar + hello world consola
 
                         --
 
-                        ## Què és Blazor?
+                        ### Què és Blazor?
 
                         >**[Interactive web UI with C#](https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor)**
                         >
@@ -123,7 +123,7 @@
                         
                         --
 
-                        ## [ASP.NET Core Blazor hosting models](https://docs.microsoft.com/en-us/aspnet/core/blazor/hosting-models?view=aspnetcore-5.0)
+                        ### [ASP.NET Core Blazor hosting models](https://docs.microsoft.com/en-us/aspnet/core/blazor/hosting-models?view=aspnetcore-5.0)
 
                         >Blazor is a web framework designed to run client-side in the browser on a WebAssembly-based .NET runtime (Blazor WebAssembly) or server-side in ASP.NET Core (Blazor Server). Regardless of the hosting model, the app and component models are the same.
 
@@ -132,7 +132,7 @@
 
                         --
 
-                        ## Hands on 2
+                        ### Hands on 2
 
                         - La meva primera aplicació Blazor.
                         - Directives i Binding. One way and Two way binding.
@@ -140,7 +140,7 @@
 
                         --
 
-                        ## Hands on 3
+                        ### Hands on 3
 
                         - Pràctica Todo-List.
                         - https://github.com/ctrl-alt-d/curs-blazor-UdG/tree/main/Exemples/dilluns8/p2blazor
@@ -163,6 +163,7 @@
                         - Intro al patró d'inversió de control (IoC)
                         - Intro al patró d'Injecció de dependències (DI)
                         - Hands on IoC & DI
+                        - Blazor DI Fundamentals
 
                         --
 
@@ -278,6 +279,27 @@
                             protected ThemeInfo ThemeInfo { get; set; }
                         }
                         ```
+
+                        --
+
+                        ### [Injecció](https://docs.microsoft.com/en-us/aspnet/core/blazor/fundamentals/dependency-injection?view=aspnetcore-5.0&pivots=webassembly)
+
+                        ```
+                        @inject IDataAccess DataRepository
+                        <ul>
+                            @foreach (var customer in customers)
+                            {
+                                <li>@customer.FirstName @customer.LastName</li>
+                            }
+                        </ul>
+                        @code {
+                            private IReadOnlyList<Customer> customers;
+                            protected override async Task OnInitializedAsync()
+                            {
+                                customers = await DataRepository.GetAllCustomersAsync();
+                            }
+                        }
+                        ```                        
 
                         --
 
