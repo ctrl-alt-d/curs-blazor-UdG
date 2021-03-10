@@ -1,0 +1,17 @@
+﻿
+
+
+<h1>@( TextAmostrar )</h1>
+
+@ElMeuTemplate1
+
+
+@ElMeuTemplate2
+
+@code
+{
+    [Parameter] public string TextAmostrar { get; set; } = "Valor per defecte";
+
+    [Parameter] public RenderFragment ElMeuTemplate1 { set; get; }
+    [Parameter] public RenderFragment ElMeuTemplate2 { set; get; }
+}

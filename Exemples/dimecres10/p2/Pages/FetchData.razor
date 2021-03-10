@@ -1,0 +1,42 @@
+﻿@page "/fetchdata"
+@using p2.Data
+@inject IElMeuRepositori Repo
+
+@if (LesMevesDades == null)
+{
+    <p>Loading</p>
+}
+else
+{
+    <ol>
+        @foreach (var item in LesMevesDades)
+        {
+            <li>@item</li>
+        }
+    </ol>
+
+}
+
+@code
+{
+
+    private List<string> LesMevesDades;
+
+    protected override Task OnInitializedAsync()
+    {
+        LesMevesDades = null;
+        return base.OnInitializedAsync();
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        await base.OnAfterRenderAsync(firstRender);
+        if (firstRender)
+        {
+            LesMevesDades = await Repo.GetDades();
+            StateHasChanged();
+        }
+
+    }
+
+}
