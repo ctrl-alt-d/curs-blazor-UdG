@@ -257,6 +257,27 @@
 
                         --
 
+                        ## [Templated Paramters](https://docs.microsoft.com/en-us/aspnet/core/blazor/components/templated-components?view=aspnetcore-5.0)
+
+                        ```
+                        @typeparam TItem
+                        <table class="table">
+                            @foreach (var item in Items)
+                            {
+                                <tr>@RowTemplate(item)</tr>
+                            }
+                        </table>
+                        @code {
+                            [Parameter]
+                            public RenderFragment<TItem> RowTemplate { get; set; }
+
+                            [Parameter]
+                            public IReadOnlyList<TItem> Items { get; set; }
+                        }                        
+                        ```
+
+                        --
+
                         ### [Cascading Value](https://docs.microsoft.com/en-us/aspnet/core/blazor/components/cascading-values-and-parameters?view=aspnetcore-5.0)
 
                         ```
